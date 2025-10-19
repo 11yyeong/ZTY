@@ -1,256 +1,135 @@
-/* 全局样式重置与基础设置 */
+/* 全局重置：适配GitHub Pages静态加载 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* 全局使用可爱字体 */
-    font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
 }
 
 body {
-    /* 页面背景：淡米色，避免纯白 */
-    background-color: #FFF8E6;
-    background-color: rgb(255, 248, 230) !important;
+    background-color: #FFF8E6; /* 淡米色背景，符合设计要求 */
     padding: 20px;
-    line-height: 1.6;
-    margin: 0;
-    color-scheme: light;
+    line-height: 1.8;
 }
 
-/* 标题样式（统一粉色+大字号） */
+/* 标题样式：确保粉色与设计一致 */
 .main-title {
-    color: #FF69B4; /* 标题粉色 */
-    font-size: 2.5rem; /* 大字号，有设计感 */
+    color: #FF69B4;
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 10px;
-    /* 标题淡入动画 */
-    animation: fadeIn 1.5s ease-in-out;
+    margin: 20px 0;
+    animation: fadeIn 1.5s ease;
 }
 
 .subtitle {
-    color: #333333;
+    color: #333;
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 30px;
 }
 
 .section-title {
-    color: #FF69B4; /* 分区标题同粉色 */
-    font-size: 1.8rem; /* 小于主标题，大于正文 */
-    margin-bottom: 20px;
+    color: #FF69B4;
+    font-size: 1.8rem;
+    margin: 20px 0;
     border-bottom: 2px solid #FFE6F2;
     padding-bottom: 8px;
 }
 
-/* 正文样式（小字号+深灰色） */
-p {
-    color: #333333;
-    font-size: 1rem; /* 正文字号 */
-    margin-bottom: 10px;
-}
-
-/* 头部标题区样式 */
-.header-section {
-    background-color: #FFEEF2; /* 淡粉色背景 */
-    padding: 30px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-/* 个人信息区样式 */
-.info-section {
-    background-color: #E6F7FF; /* 淡蓝色背景 */
-    padding: 30px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.info-content {
-    display: flex; /* Flexbox布局：图标+文字横向排列 */
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* 个人信息区图标样式（适配动画） */
-.info-img {
-    /* 图标Hover放大动画 */
+/* 核心：图标样式统一，确保显示尺寸与动画 */
+.info-icon, .study-icon {
+    font-size: 120px; /* 统一大图标尺寸 */
+    color: #FF69B4; /* 粉色图标，匹配标题色 */
+    margin-right: 30px;
     transition: transform 0.3s ease;
 }
 
-.info-img:hover {
-    transform: scale(1.1); /* hover时放大1.1倍 */
+.hobby-icon {
+    font-size: 100px; /* 兴趣区图标尺寸 */
+    color: #FF69B4;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+    animation: shake 3s infinite ease-in-out;
 }
 
-/* 兴趣爱好区样式 */
-.hobby-section {
-    background-color: #F0FFF4; /* 淡绿色背景 */
-    padding: 30px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+/* 图标交互效果：确保hover生效 */
+.info-icon:hover, .study-icon:hover, .hobby-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 分区布局：确保图标与文字对齐 */
+.info-content, .study-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* 适配小屏幕，避免图标错位 */
 }
 
 .hobby-grid {
-    display: grid; /* Grid布局：两列展示 */
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
 .hobby-card {
-    text-align: center;
+    background-color: rgba(255,255,255,0.6);
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6); /* 半透明白色卡片 */
-    border-radius: 5px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-/* 兴趣爱好区图标组样式（适配多个图标排列） */
-.hobby-icon-group {
+.icon-group {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
-/* 兴趣爱好区图标样式（适配动画） */
-.hobby-img {
-    /* 图标轻微晃动动画 */
-    animation: shake 3s infinite ease-in-out;
-    transition: transform 0.3s ease;
-}
-
-.hobby-img:hover {
-    transform: scale(1.1); /* hover时放大1.1倍 */
-}
-
-.hobby-card h3 {
-    color: #333333;
-    font-size: 1.3rem;
-}
-
-/* 学习方向区样式 */
-.study-section {
-    background-color: #F5F0FF; /* 淡紫色背景 */
-    padding: 30px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.study-content {
-    display: flex; /* Flexbox布局：图标+文字横向排列 */
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* 学习方向区图标样式（适配动画） */
-.study-img {
-    /* 图标Hover放大动画 */
-    transition: transform 0.3s ease;
-}
-
-.study-img:hover {
-    transform: scale(1.1);
-}
-
-/* 底部链接区样式 */
-.link-section {
-    background-color: #F5F5F5; /* 淡灰色背景 */
-    padding: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
-
+/* 底部链接：确保按钮样式 */
 .link-content {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
 .link-btn {
+    background-color: #FF69B4;
     color: white;
-    background-color: #FF69B4; /* 粉色按钮 */
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1.1rem;
-    /* 按钮Hover变色 */
     transition: background-color 0.3s ease;
 }
 
 .link-btn:hover {
-    background-color: #FF1493; /* Hover时加深粉色 */
+    background-color: #FF1493;
 }
 
-/* 动画定义 */
-/* 标题淡入动画 */
+/* 动画定义：确保生效 */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 图标轻微晃动动画 */
 @keyframes shake {
-    0%, 100% { transform: rotate(0deg); }
+    0%, 100% { transform: rotate(0); }
     25% { transform: rotate(-3deg); }
     75% { transform: rotate(3deg); }
 }
 
-/* 移动端适配（屏幕宽度≤768px） */
+/* 移动端适配：避免图标堆叠 */
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 2rem; /* 缩小主标题字号 */
+    .hobby-grid {
+        grid-template-columns: 1fr;
     }
 
-    .section-title {
-        font-size: 1.5rem; /* 缩小分区标题字号 */
+    .info-icon, .study-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
     .info-content, .study-content {
-        flex-direction: column; /* 改为纵向排列 */
-        text-align: center;
-    }
-
-    .hobby-grid {
-        grid-template-columns: 1fr; /* 改为单列展示 */
-    }
-
-    .hobby-icon-group {
         flex-direction: column;
-        gap: 15px;
-    }
-
-    .hobby-icon-group .hobby-img {
-        margin-left: 0 !important;
-    }
-}
-
-/* 针对老旧浏览器（如IE）的兼容处理 */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    body {
-        background: #FFF8E6;
-    }
-
-    .info-content, .study-content, .hobby-icon-group, .link-content {
-        display: -ms-flexbox;
-        -ms-flex-align: center;
-        -ms-flex-pack: center;
-    }
-
-    .hobby-grid {
-        display: -ms-flexbox;
-        -ms-flex-direction: column;
-    }
-
-    @media (min-width: 769px) {
-        .hobby-grid {
-            -ms-flex-direction: row;
-            -ms-flex-wrap: wrap;
-        }
-
-        .hobby-card {
-            -ms-flex: 1;
-            margin: 0 15px;
-        }
+        text-align: center;
     }
 }
