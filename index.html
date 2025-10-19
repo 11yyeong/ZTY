@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="color-scheme" content="light">
     <title>ZTY的个人网站</title>
-    <!-- 引入CSS文件（保留原分区背景色配置，不改动） -->
-    <link rel="stylesheet" href="zty-style.css">
-    <!-- 引入Font Awesome在线图标库 -->
+    <!-- 引入Font Awesome在线图标库（解决本地图标路径问题） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- 保留原可爱字体引入 -->
+    <!-- 引入CSS文件（确保与HTML文件同目录，符合作业1部署要求） -->
+    <link rel="stylesheet" href="zty-style.css">
+    <!-- 引入可爱风格字体（适配设计要求） -->
     <style>
         @font-face {
             font-family: "ZCOOLKuaiLe";
@@ -19,18 +18,17 @@
     </style>
 </head>
 <body>
-    <!-- 头部标题区（保留原背景色配置，不改动） -->
+    <!-- 1. 头部标题区（淡粉色背景，符合作业1分区颜色差异化要求） -->
     <header class="header-section">
         <h1 class="main-title">ZTY的个人空间</h1>
         <p class="subtitle">智能制造工程在读 · 热爱生活与学习</p>
     </header>
 
-    <!-- 个人信息区（保留原背景色配置，仅修改图标及动画关联） -->
+    <!-- 2. 个人信息区（淡蓝色背景，符合作业1分区颜色差异化要求） -->
     <section class="info-section">
         <h2 class="section-title">关于我</h2>
         <div class="info-content">
-            <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
-            <i class="fa-solid fa-user-graduate info-img icon-animation" style="font-size: 120px; color: #FF69B4;"></i>
+            <i class="fa-solid fa-user-graduate info-icon icon-animation" style="color: #FF69B4;"></i>
             <div class="info-text">
                 <p>年龄：21岁</p>
                 <p>专业：智能制造工程（在读大学生）</p>
@@ -39,37 +37,36 @@
         </div>
     </section>
 
-    <!-- 兴趣爱好区（保留原背景色配置，仅修改图标及动画关联） -->
+    <!-- 3. 兴趣爱好区（淡绿色背景，符合作业1分区颜色差异化要求） -->
     <section class="hobby-section">
         <h2 class="section-title">我的爱好</h2>
         <div class="hobby-grid">
+            <!-- 音乐爱好卡片 -->
             <div class="hobby-card">
                 <h3>音乐</h3>
                 <div class="hobby-icon-group">
-                    <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
-                    <i class="fa-solid fa-guitar hobby-img icon-animation" style="font-size: 100px; color: #FF69B4;"></i>
-                    <i class="fa-solid fa-piano hobby-img icon-animation" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
+                    <i class="fa-solid fa-guitar hobby-icon icon-animation" style="color: #FF69B4;"></i>
+                    <i class="fa-solid fa-piano hobby-icon icon-animation" style="color: #FF69B4;"></i>
                 </div>
                 <p>擅长乐器：吉他、钢琴</p>
             </div>
+            <!-- 运动爱好卡片 -->
             <div class="hobby-card">
                 <h3>运动</h3>
                 <div class="hobby-icon-group">
-                    <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
-                    <i class="fa-solid fa-shuttlecock hobby-img icon-animation" style="font-size: 100px; color: #FF69B4;"></i>
-                    <i class="fa-solid fa-table-tennis hobby-img icon-animation" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
+                    <i class="fa-solid fa-shuttlecock hobby-icon icon-animation" style="color: #FF69B4;"></i>
+                    <i class="fa-solid fa-table-tennis hobby-icon icon-animation" style="color: #FF69B4;"></i>
                 </div>
                 <p>常玩项目：羽毛球、乒乓球</p>
             </div>
         </div>
     </section>
 
-    <!-- 学习方向区（保留原背景色配置，仅修改图标及动画关联） -->
+    <!-- 4. 学习方向区（淡紫色背景，符合作业1分区颜色差异化要求） -->
     <section class="study-section">
         <h2 class="section-title">学习与规划</h2>
         <div class="study-content">
-            <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
-            <i class="fa-solid fa-code study-img icon-animation" style="font-size: 120px; color: #FF69B4;"></i>
+            <i class="fa-solid fa-code study-icon icon-animation" style="color: #FF69B4;"></i>
             <div class="study-text">
                 <p>兴趣拓展：学习Web Programming，探索前端开发</p>
                 <p>专业关联：希望通过Web技术，为未来智能制造工程的数字化、可视化学习提供帮助</p>
@@ -77,16 +74,14 @@
         </div>
     </section>
 
-    <!-- 底部链接区（保留原背景色配置，仅修改图标及动画关联） -->
+    <!-- 5. 底部链接区（淡灰色背景，符合作业1分区颜色差异化要求） -->
     <footer class="link-section">
         <h2 class="section-title">网站链接</h2>
         <div class="link-content">
             <a href="https://github.com/[你的GitHub用户名]/zty-homepage" target="_blank" class="link-btn">
-                <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
                 <i class="fa-brands fa-github icon-animation" style="margin-right: 5px;"></i>GitHub仓库
             </a>
             <a href="https://[你的GitHub用户名].github.io/zty-homepage/" target="_blank" class="link-btn">
-                <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
                 <i class="fa-solid fa-globe icon-animation" style="margin-right: 5px;"></i>GitHub Pages网站
             </a>
         </div>

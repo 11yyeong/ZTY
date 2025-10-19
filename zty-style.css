@@ -1,26 +1,26 @@
-/* 全局样式重置与基础设置（保留原配置，不改动） */
+/* 全局样式重置（适配作业1跨浏览器显示要求） */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* 全局应用可爱字体，符合作业1设计要求 */
     font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
 }
 
+/* 页面基础背景（淡米色，非纯白，符合作业1设计要求） */
 body {
     background-color: #FFF8E6;
-    background-color: rgb(255, 248, 230) !important;
     padding: 20px;
     line-height: 1.6;
-    margin: 0;
-    color-scheme: light;
 }
 
-/* 标题样式（保留原配置，不改动） */
+/* 标题样式（粉色+大字号，符合作业1设计要求） */
 .main-title {
     color: #FF69B4;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* 标题字号大于正文，有设计感 */
     text-align: center;
     margin-bottom: 10px;
+    /* 标题淡入动画，符合作业1简单动画要求 */
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -33,50 +33,57 @@ body {
 
 .section-title {
     color: #FF69B4;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* 分区标题字号介于主标题与正文之间 */
     margin-bottom: 20px;
     border-bottom: 2px solid #FFE6F2;
     padding-bottom: 8px;
 }
 
-/* 正文样式（保留原配置，不改动） */
+/* 正文样式（小字号+深灰色，符合作业1设计要求） */
 p {
     color: #333333;
-    font-size: 1rem;
+    font-size: 1rem; /* 正文字号小于标题 */
     margin-bottom: 10px;
 }
 
-/* 各分区样式（严格保留原背景色配置，仅新增图标动画类） */
+/* 1. 头部标题区（淡粉色背景，差异化分区颜色） */
 .header-section {
-    background-color: #FFEEF2; /* 原淡粉色背景，不改动 */
+    background-color: #FFEEF2 !important; /* !important确保优先级，避免被覆盖 */
     padding: 30px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
+/* 2. 个人信息区（淡蓝色背景，差异化分区颜色） */
 .info-section {
-    background-color: #E6F7FF; /* 原淡蓝色背景，不改动 */
+    background-color: #E6F7FF !important;
     padding: 30px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .info-content {
-    display: flex;
+    display: flex; /* Flexbox布局，符合作业1技术要求 */
     align-items: center;
     gap: 20px;
     justify-content: center;
 }
 
+.info-icon {
+    font-size: 120px; /* 图标尺寸适配布局 */
+    transition: transform 0.3s ease;
+}
+
+/* 3. 兴趣爱好区（淡绿色背景，差异化分区颜色） */
 .hobby-section {
-    background-color: #F0FFF4; /* 原淡绿色背景，不改动 */
+    background-color: #F0FFF4 !important;
     padding: 30px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .hobby-grid {
-    display: grid;
+    display: grid; /* Grid布局，符合作业1技术要求 */
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
@@ -93,24 +100,37 @@ p {
     justify-content: center;
     align-items: center;
     margin: 15px 0;
+    gap: 20px;
 }
 
+.hobby-icon {
+    font-size: 100px; /* 图标尺寸适配布局 */
+    transition: transform 0.3s ease;
+}
+
+/* 4. 学习方向区（淡紫色背景，差异化分区颜色） */
 .study-section {
-    background-color: #F5F0FF; /* 原淡紫色背景，不改动 */
+    background-color: #F5F0FF !important;
     padding: 30px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
 .study-content {
-    display: flex;
+    display: flex; /* Flexbox布局，符合作业1技术要求 */
     align-items: center;
     gap: 20px;
     justify-content: center;
 }
 
+.study-icon {
+    font-size: 120px; /* 图标尺寸适配布局 */
+    transition: transform 0.3s ease;
+}
+
+/* 5. 底部链接区（淡灰色背景，差异化分区颜色） */
 .link-section {
-    background-color: #F5F5F5; /* 原淡灰色背景，不改动 */
+    background-color: #F5F5F5 !important;
     padding: 30px;
     border-radius: 5px;
     text-align: center;
@@ -130,104 +150,59 @@ p {
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1.1rem;
+    /* 按钮Hover效果，符合作业1技术要求 */
     transition: background-color 0.3s ease;
 }
 
 .link-btn:hover {
-    background-color: #FF1493;
+    background-color: #FF1493; /* Hover变色，增强交互 */
 }
 
-/* 图标基础样式（保留原配置，不改动） */
-.info-img, .study-img, .hobby-img {
-    transition: transform 0.3s ease;
-}
-
-.info-img:hover, .study-img:hover, .hobby-img:hover {
-    transform: scale(1.1);
-}
-
-/* 关键修改：新增统一图标动画类icon-animation，替换原分散动画配置 */
+/* 图标动画（统一动画类，符合作业1简单动画要求） */
 .icon-animation {
-    /* 优化晃动动画：更自然的幅度与速度 */
-    animation: iconShake 4s infinite ease-in-out;
-    /* 新增hover时旋转效果，丰富交互 */
-    transition: transform 0.4s ease;
+    animation: iconShake 4s infinite ease-in-out; /* 图标轻微晃动动画 */
 }
 
-.icon-animation:hover {
-    /* hover时兼具放大与轻微旋转，增强视觉反馈 */
-    transform: scale(1.15) rotate(5deg);
+/* 图标Hover效果（符合作业1技术要求） */
+.info-icon:hover, .hobby-icon:hover, .study-icon:hover {
+    transform: scale(1.1); /* Hover放大，增强交互 */
 }
 
-/* 标题淡入动画（保留原配置，不改动） */
+/* 动画定义（简单动画，符合作业1设计要求） */
+/* 标题淡入动画 */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 关键修改：优化图标晃动动画，避免原动画生硬 */
+/* 图标晃动动画 */
 @keyframes iconShake {
-    0%, 100% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(-2deg) scale(1.02); }
-    50% { transform: rotate(0deg) scale(1); }
-    75% { transform: rotate(2deg) scale(1.02); }
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
 }
 
-/* 移动端适配（保留原配置，不改动） */
+/* 移动端适配（响应式设计，符合作业1部署兼容性要求） */
 @media (max-width: 768px) {
     .main-title {
-        font-size: 2rem;
+        font-size: 2rem; /* 缩小主标题字号适配小屏幕 */
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* 缩小分区标题字号 */
     }
 
     .info-content, .study-content {
-        flex-direction: column;
+        flex-direction: column; /* 改为纵向排列 */
         text-align: center;
     }
 
     .hobby-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 改为单列展示 */
     }
 
     .hobby-icon-group {
         flex-direction: column;
         gap: 15px;
-    }
-
-    .hobby-icon-group .hobby-img {
-        margin-left: 0 !important;
-    }
-}
-
-/* 老旧浏览器兼容（保留原配置，不改动） */
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    body {
-        background: #FFF8E6;
-    }
-
-    .info-content, .study-content, .hobby-icon-group, .link-content {
-        display: -ms-flexbox;
-        -ms-flex-align: center;
-        -ms-flex-pack: center;
-    }
-
-    .hobby-grid {
-        display: -ms-flexbox;
-        -ms-flex-direction: column;
-    }
-
-    @media (min-width: 769px) {
-        .hobby-grid {
-            -ms-flex-direction: row;
-            -ms-flex-wrap: wrap;
-        }
-
-        .hobby-card {
-            -ms-flex: 1;
-            margin: 0 15px;
-        }
     }
 }
