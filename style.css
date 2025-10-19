@@ -1,0 +1,203 @@
+/* 全局样式重置与基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 全局使用可爱字体 */
+    font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
+}
+
+body {
+    /* 页面背景：淡米色，避免纯白 */
+    background-color: #FFF8E6;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* 标题样式（统一粉色+大字号） */
+.main-title {
+    color: #FF69B4; /* 标题粉色 */
+    font-size: 2.5rem; /* 大字号，有设计感 */
+    text-align: center;
+    margin-bottom: 10px;
+    /* 标题淡入动画 */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.subtitle {
+    color: #333333;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    color: #FF69B4; /* 分区标题同粉色 */
+    font-size: 1.8rem; /* 小于主标题，大于正文 */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFE6F2;
+    padding-bottom: 8px;
+}
+
+/* 正文样式（小字号+深灰色） */
+p {
+    color: #333333;
+    font-size: 1rem; /* 正文字号 */
+    margin-bottom: 10px;
+}
+
+/* 头部标题区样式 */
+.header-section {
+    background-color: #FFEEF2; /* 淡粉色背景 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* 个人信息区样式 */
+.info-section {
+    background-color: #E6F7FF; /* 淡蓝色背景 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.info-content {
+    display: flex; /* Flexbox布局：图片+文字横向排列 */
+    align-items: center;
+    gap: 20px;
+}
+
+.info-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* 圆形图片 */
+    /* 图片Hover放大动画 */
+    transition: transform 0.3s ease;
+}
+
+.info-img:hover {
+    transform: scale(1.1); /*  hover时放大1.1倍 */
+}
+
+/* 兴趣爱好区样式 */
+.hobby-section {
+    background-color: #F0FFF4; /* 淡绿色背景 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.hobby-grid {
+    display: grid; /* Grid布局：两列展示 */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.hobby-card {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* 半透明白色卡片 */
+    border-radius: 5px;
+}
+
+.hobby-img {
+    width: 100px;
+    height: 100px;
+    margin: 15px 0;
+    /* 图片轻微晃动动画 */
+    animation: shake 3s infinite ease-in-out;
+}
+
+.hobby-card h3 {
+    color: #333333;
+    font-size: 1.3rem;
+}
+
+/* 学习方向区样式 */
+.study-section {
+    background-color: #F5F0FF; /* 淡紫色背景 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.study-content {
+    display: flex; /* Flexbox布局：图片+文字横向排列 */
+    align-items: center;
+    gap: 20px;
+}
+
+.study-img {
+    width: 120px;
+    height: 120px;
+    /* 图片Hover放大动画 */
+    transition: transform 0.3s ease;
+}
+
+.study-img:hover {
+    transform: scale(1.1);
+}
+
+/* 底部链接区样式 */
+.link-section {
+    background-color: #F5F5F5; /* 淡灰色背景 */
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.link-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.link-btn {
+    color: white;
+    background-color: #FF69B4; /* 粉色按钮 */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    /* 按钮Hover变色 */
+    transition: background-color 0.3s ease;
+}
+
+.link-btn:hover {
+    background-color: #FF1493; /* Hover时加深粉色 */
+}
+
+/* 动画定义 */
+/* 标题淡入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 图片轻微晃动动画 */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+
+/* 移动端适配（屏幕宽度≤768px） */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem; /* 缩小主标题字号 */
+    }
+
+    .section-title {
+        font-size: 1.5rem; /* 缩小分区标题字号 */
+    }
+
+    .info-content, .study-content {
+        flex-direction: column; /* 改为纵向排列 */
+        text-align: center;
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr; /* 改为单列展示 */
+    }
+}
