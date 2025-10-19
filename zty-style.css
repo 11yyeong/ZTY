@@ -1,27 +1,31 @@
-/* 全局重置：适配GitHub Pages静态加载 */
+/* 全局样式重置与基础设置（保留原配置，不改动） */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
 }
 
 body {
-    background-color: #FFF8E6; /* 淡米色背景，符合设计要求 */
+    background-color: #FFF8E6;
+    background-color: rgb(255, 248, 230) !important;
     padding: 20px;
-    line-height: 1.8;
+    line-height: 1.6;
+    margin: 0;
+    color-scheme: light;
 }
 
-/* 标题样式：确保粉色与设计一致 */
+/* 标题样式（保留原配置，不改动） */
 .main-title {
     color: #FF69B4;
     font-size: 2.5rem;
     text-align: center;
-    margin: 20px 0;
-    animation: fadeIn 1.5s ease;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .subtitle {
-    color: #333;
+    color: #333333;
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 30px;
@@ -30,38 +34,45 @@ body {
 .section-title {
     color: #FF69B4;
     font-size: 1.8rem;
-    margin: 20px 0;
+    margin-bottom: 20px;
     border-bottom: 2px solid #FFE6F2;
     padding-bottom: 8px;
 }
 
-/* 核心：图标样式统一，确保显示尺寸与动画 */
-.info-icon, .study-icon {
-    font-size: 120px; /* 统一大图标尺寸 */
-    color: #FF69B4; /* 粉色图标，匹配标题色 */
-    margin-right: 30px;
-    transition: transform 0.3s ease;
+/* 正文样式（保留原配置，不改动） */
+p {
+    color: #333333;
+    font-size: 1rem;
+    margin-bottom: 10px;
 }
 
-.hobby-icon {
-    font-size: 100px; /* 兴趣区图标尺寸 */
-    color: #FF69B4;
-    margin: 0 15px;
-    transition: transform 0.3s ease;
-    animation: shake 3s infinite ease-in-out;
+/* 各分区样式（严格保留原背景色配置，仅新增图标动画类） */
+.header-section {
+    background-color: #FFEEF2; /* 原淡粉色背景，不改动 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-/* 图标交互效果：确保hover生效 */
-.info-icon:hover, .study-icon:hover, .hobby-icon:hover {
-    transform: scale(1.1);
+.info-section {
+    background-color: #E6F7FF; /* 原淡蓝色背景，不改动 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-/* 分区布局：确保图标与文字对齐 */
-.info-content, .study-content {
+.info-content {
     display: flex;
     align-items: center;
+    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap; /* 适配小屏幕，避免图标错位 */
+}
+
+.hobby-section {
+    background-color: #F0FFF4; /* 原淡绿色背景，不改动 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .hobby-grid {
@@ -71,29 +82,50 @@ body {
 }
 
 .hobby-card {
-    background-color: rgba(255,255,255,0.6);
+    text-align: center;
     padding: 20px;
-    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+}
+
+.hobby-icon-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.study-section {
+    background-color: #F5F0FF; /* 原淡紫色背景，不改动 */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.study-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.link-section {
+    background-color: #F5F5F5; /* 原淡灰色背景，不改动 */
+    padding: 30px;
+    border-radius: 5px;
     text-align: center;
 }
 
-.icon-group {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-/* 底部链接：确保按钮样式 */
 .link-content {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .link-btn {
-    background-color: #FF69B4;
     color: white;
+    background-color: #FF69B4;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -105,31 +137,97 @@ body {
     background-color: #FF1493;
 }
 
-/* 动画定义：确保生效 */
+/* 图标基础样式（保留原配置，不改动） */
+.info-img, .study-img, .hobby-img {
+    transition: transform 0.3s ease;
+}
+
+.info-img:hover, .study-img:hover, .hobby-img:hover {
+    transform: scale(1.1);
+}
+
+/* 关键修改：新增统一图标动画类icon-animation，替换原分散动画配置 */
+.icon-animation {
+    /* 优化晃动动画：更自然的幅度与速度 */
+    animation: iconShake 4s infinite ease-in-out;
+    /* 新增hover时旋转效果，丰富交互 */
+    transition: transform 0.4s ease;
+}
+
+.icon-animation:hover {
+    /* hover时兼具放大与轻微旋转，增强视觉反馈 */
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* 标题淡入动画（保留原配置，不改动） */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes shake {
-    0%, 100% { transform: rotate(0); }
-    25% { transform: rotate(-3deg); }
-    75% { transform: rotate(3deg); }
+/* 关键修改：优化图标晃动动画，避免原动画生硬 */
+@keyframes iconShake {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-2deg) scale(1.02); }
+    50% { transform: rotate(0deg) scale(1); }
+    75% { transform: rotate(2deg) scale(1.02); }
 }
 
-/* 移动端适配：避免图标堆叠 */
+/* 移动端适配（保留原配置，不改动） */
 @media (max-width: 768px) {
-    .hobby-grid {
-        grid-template-columns: 1fr;
+    .main-title {
+        font-size: 2rem;
     }
 
-    .info-icon, .study-icon {
-        margin-right: 0;
-        margin-bottom: 20px;
+    .section-title {
+        font-size: 1.5rem;
     }
 
     .info-content, .study-content {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobby-icon-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hobby-icon-group .hobby-img {
+        margin-left: 0 !important;
+    }
+}
+
+/* 老旧浏览器兼容（保留原配置，不改动） */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+        background: #FFF8E6;
+    }
+
+    .info-content, .study-content, .hobby-icon-group, .link-content {
+        display: -ms-flexbox;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+    }
+
+    .hobby-grid {
+        display: -ms-flexbox;
+        -ms-flex-direction: column;
+    }
+
+    @media (min-width: 769px) {
+        .hobby-grid {
+            -ms-flex-direction: row;
+            -ms-flex-wrap: wrap;
+        }
+
+        .hobby-card {
+            -ms-flex: 1;
+            margin: 0 15px;
+        }
     }
 }

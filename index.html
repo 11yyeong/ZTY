@@ -3,32 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="color-scheme" content="light">
     <title>ZTY的个人网站</title>
-    <!-- 1. 修复Font Awesome引用：用https协议确保在线加载（适配GitHub Pages） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- 2. 引入CSS文件（确保与GitHub仓库中CSS路径一致） -->
+    <!-- 引入CSS文件（保留原分区背景色配置，不改动） -->
     <link rel="stylesheet" href="zty-style.css">
-    <!-- 可爱字体引入（若GitHub仓库未上传字体文件，可替换为在线字体避免失效） -->
+    <!-- 引入Font Awesome在线图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 保留原可爱字体引入 -->
     <style>
-        /* 替换为在线可爱字体（无需本地文件，适配GitHub部署） */
-        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
-        body {
-            font-family: 'ZCOOL KuaiLe', sans-serif;
+        @font-face {
+            font-family: "ZCOOLKuaiLe";
+            src: url("ZCOOLKuaiLe-Regular.ttf") format("truetype");
         }
     </style>
 </head>
 <body>
+    <!-- 头部标题区（保留原背景色配置，不改动） -->
     <header class="header-section">
         <h1 class="main-title">ZTY的个人空间</h1>
         <p class="subtitle">智能制造工程在读 · 热爱生活与学习</p>
     </header>
 
-    <!-- 个人信息区：简化图标代码，确保类名正确 -->
+    <!-- 个人信息区（保留原背景色配置，仅修改图标及动画关联） -->
     <section class="info-section">
         <h2 class="section-title">关于我</h2>
         <div class="info-content">
-            <!-- 图标类名确保为Font Awesome 6.5.1支持的版本 -->
-            <i class="fa-solid fa-user-graduate info-icon"></i>
+            <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+            <i class="fa-solid fa-user-graduate info-img icon-animation" style="font-size: 120px; color: #FF69B4;"></i>
             <div class="info-text">
                 <p>年龄：21岁</p>
                 <p>专业：智能制造工程（在读大学生）</p>
@@ -37,34 +39,37 @@
         </div>
     </section>
 
-    <!-- 兴趣爱好区：拆分图标，避免样式冲突 -->
+    <!-- 兴趣爱好区（保留原背景色配置，仅修改图标及动画关联） -->
     <section class="hobby-section">
         <h2 class="section-title">我的爱好</h2>
         <div class="hobby-grid">
             <div class="hobby-card">
                 <h3>音乐</h3>
-                <div class="icon-group">
-                    <i class="fa-solid fa-guitar hobby-icon"></i>
-                    <i class="fa-solid fa-piano hobby-icon"></i>
+                <div class="hobby-icon-group">
+                    <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+                    <i class="fa-solid fa-guitar hobby-img icon-animation" style="font-size: 100px; color: #FF69B4;"></i>
+                    <i class="fa-solid fa-piano hobby-img icon-animation" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
                 </div>
                 <p>擅长乐器：吉他、钢琴</p>
             </div>
             <div class="hobby-card">
                 <h3>运动</h3>
-                <div class="icon-group">
-                    <i class="fa-solid fa-shuttlecock hobby-icon"></i>
-                    <i class="fa-solid fa-table-tennis hobby-icon"></i>
+                <div class="hobby-icon-group">
+                    <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+                    <i class="fa-solid fa-shuttlecock hobby-img icon-animation" style="font-size: 100px; color: #FF69B4;"></i>
+                    <i class="fa-solid fa-table-tennis hobby-img icon-animation" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
                 </div>
                 <p>常玩项目：羽毛球、乒乓球</p>
             </div>
         </div>
     </section>
 
-    <!-- 学习方向区：明确图标样式归属 -->
+    <!-- 学习方向区（保留原背景色配置，仅修改图标及动画关联） -->
     <section class="study-section">
         <h2 class="section-title">学习与规划</h2>
         <div class="study-content">
-            <i class="fa-solid fa-code study-icon"></i>
+            <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+            <i class="fa-solid fa-code study-img icon-animation" style="font-size: 120px; color: #FF69B4;"></i>
             <div class="study-text">
                 <p>兴趣拓展：学习Web Programming，探索前端开发</p>
                 <p>专业关联：希望通过Web技术，为未来智能制造工程的数字化、可视化学习提供帮助</p>
@@ -72,15 +77,17 @@
         </div>
     </section>
 
-    <!-- 底部链接区：适配GitHub Pages跳转 -->
+    <!-- 底部链接区（保留原背景色配置，仅修改图标及动画关联） -->
     <footer class="link-section">
         <h2 class="section-title">网站链接</h2>
         <div class="link-content">
             <a href="https://github.com/[你的GitHub用户名]/zty-homepage" target="_blank" class="link-btn">
-                <i class="fa-brands fa-github"></i> GitHub仓库
+                <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+                <i class="fa-brands fa-github icon-animation" style="margin-right: 5px;"></i>GitHub仓库
             </a>
             <a href="https://[你的GitHub用户名].github.io/zty-homepage/" target="_blank" class="link-btn">
-                <i class="fa-solid fa-globe"></i> 在线网站
+                <!-- 替换为Font Awesome图标，添加动画类icon-animation -->
+                <i class="fa-solid fa-globe icon-animation" style="margin-right: 5px;"></i>GitHub Pages网站
             </a>
         </div>
     </footer>
