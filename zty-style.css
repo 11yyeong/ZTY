@@ -7,12 +7,6 @@
     font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
 }
 
-/* 页面基础背景（淡米色，非纯白，符合作业1设计要求） */
-body {
-    background-color: #FFF8E6;
-    padding: 20px;
-    line-height: 1.6;
-}
 
 /* 标题样式（粉色+大字号，符合作业1设计要求） */
 .main-title {
