@@ -10,8 +10,11 @@
 body {
     /* 页面背景：淡米色，避免纯白 */
     background-color: #FFF8E6;
+    background-color: rgb(255, 248, 230) !important;
     padding: 20px;
     line-height: 1.6;
+    margin: 0;
+    color-scheme: light;
 }
 
 /* 标题样式（统一粉色+大字号） */
@@ -63,21 +66,20 @@ p {
 }
 
 .info-content {
-    display: flex; /* Flexbox布局：图片+文字横向排列 */
+    display: flex; /* Flexbox布局：图标+文字横向排列 */
     align-items: center;
     gap: 20px;
+    justify-content: center;
 }
 
+/* 个人信息区图标样式（适配动画） */
 .info-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* 圆形图片 */
-    /* 图片Hover放大动画 */
+    /* 图标Hover放大动画 */
     transition: transform 0.3s ease;
 }
 
 .info-img:hover {
-    transform: scale(1.1); /*  hover时放大1.1倍 */
+    transform: scale(1.1); /* hover时放大1.1倍 */
 }
 
 /* 兴趣爱好区样式 */
@@ -101,12 +103,23 @@ p {
     border-radius: 5px;
 }
 
-.hobby-img {
-    width: 100px;
-    height: 100px;
+/* 兴趣爱好区图标组样式（适配多个图标排列） */
+.hobby-icon-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15px 0;
-    /* 图片轻微晃动动画 */
+}
+
+/* 兴趣爱好区图标样式（适配动画） */
+.hobby-img {
+    /* 图标轻微晃动动画 */
     animation: shake 3s infinite ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.hobby-img:hover {
+    transform: scale(1.1); /* hover时放大1.1倍 */
 }
 
 .hobby-card h3 {
@@ -123,15 +136,15 @@ p {
 }
 
 .study-content {
-    display: flex; /* Flexbox布局：图片+文字横向排列 */
+    display: flex; /* Flexbox布局：图标+文字横向排列 */
     align-items: center;
     gap: 20px;
+    justify-content: center;
 }
 
+/* 学习方向区图标样式（适配动画） */
 .study-img {
-    width: 120px;
-    height: 120px;
-    /* 图片Hover放大动画 */
+    /* 图标Hover放大动画 */
     transition: transform 0.3s ease;
 }
 
@@ -151,6 +164,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .link-btn {
@@ -175,7 +189,7 @@ p {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 图片轻微晃动动画 */
+/* 图标轻微晃动动画 */
 @keyframes shake {
     0%, 100% { transform: rotate(0deg); }
     25% { transform: rotate(-3deg); }
@@ -199,5 +213,44 @@ p {
 
     .hobby-grid {
         grid-template-columns: 1fr; /* 改为单列展示 */
+    }
+
+    .hobby-icon-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hobby-icon-group .hobby-img {
+        margin-left: 0 !important;
+    }
+}
+
+/* 针对老旧浏览器（如IE）的兼容处理 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+        background: #FFF8E6;
+    }
+
+    .info-content, .study-content, .hobby-icon-group, .link-content {
+        display: -ms-flexbox;
+        -ms-flex-align: center;
+        -ms-flex-pack: center;
+    }
+
+    .hobby-grid {
+        display: -ms-flexbox;
+        -ms-flex-direction: column;
+    }
+
+    @media (min-width: 769px) {
+        .hobby-grid {
+            -ms-flex-direction: row;
+            -ms-flex-wrap: wrap;
+        }
+
+        .hobby-card {
+            -ms-flex: 1;
+            margin: 0 15px;
+        }
     }
 }

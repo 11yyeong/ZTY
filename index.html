@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 强制IE使用最新渲染引擎 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 声明网站支持的颜色配置文件 -->
+    <meta name="color-scheme" content="light">
     <title>ZTY的个人网站</title>
     <!-- 引入CSS文件 -->
     <link rel="stylesheet" href="zty-style.css">
-    <!-- 引入可爱风格字体（示例：站酷快乐体2016，需本地放置字体文件） -->
+    <!-- 引入Font Awesome在线图标库（替换本地图标文件） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 引入可爱风格字体 -->
     <style>
         @font-face {
             font-family: "ZCOOLKuaiLe";
@@ -25,7 +31,8 @@
     <section class="info-section">
         <h2 class="section-title">关于我</h2>
         <div class="info-content">
-            <img src="student-icon.png" alt="大学生图标" class="info-img">
+            <!-- 用Font Awesome图标替代本地student-icon.png -->
+            <i class="fa-solid fa-user-graduate info-img" style="font-size: 120px; color: #FF69B4;"></i>
             <div class="info-text">
                 <p>年龄：21岁</p>
                 <p>专业：智能制造工程（在读大学生）</p>
@@ -38,16 +45,22 @@
     <section class="hobby-section">
         <h2 class="section-title">我的爱好</h2>
         <div class="hobby-grid">
-            <!-- 音乐爱好 -->
+            <!-- 音乐爱好：用Font Awesome图标替代本地music-icon.png -->
             <div class="hobby-card">
                 <h3>音乐</h3>
-                <img src="music-icon.png" alt="吉他钢琴图标" class="hobby-img">
+                <div class="hobby-icon-group">
+                    <i class="fa-solid fa-guitar hobby-img" style="font-size: 100px; color: #FF69B4;"></i>
+                    <i class="fa-solid fa-piano hobby-img" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
+                </div>
                 <p>擅长乐器：吉他、钢琴</p>
             </div>
-            <!-- 运动爱好 -->
+            <!-- 运动爱好：用Font Awesome图标替代本地sports-icon.png -->
             <div class="hobby-card">
                 <h3>运动</h3>
-                <img src="sports-icon.png" alt="羽毛球乒乓球图标" class="hobby-img">
+                <div class="hobby-icon-group">
+                    <i class="fa-solid fa-shuttlecock hobby-img" style="font-size: 100px; color: #FF69B4;"></i>
+                    <i class="fa-solid fa-table-tennis hobby-img" style="font-size: 100px; color: #FF69B4; margin-left: 20px;"></i>
+                </div>
                 <p>常玩项目：羽毛球、乒乓球</p>
             </div>
         </div>
@@ -57,7 +70,8 @@
     <section class="study-section">
         <h2 class="section-title">学习与规划</h2>
         <div class="study-content">
-            <img src="web-icon.png" alt="Web编程图标" class="study-img">
+            <!-- 用Font Awesome图标替代本地web-icon.png -->
+            <i class="fa-solid fa-code study-img" style="font-size: 120px; color: #FF69B4;"></i>
             <div class="study-text">
                 <p>兴趣拓展：学习Web Programming，探索前端开发</p>
                 <p>专业关联：希望通过Web技术，为未来智能制造工程的数字化、可视化学习提供帮助</p>
@@ -69,8 +83,12 @@
     <footer class="link-section">
         <h2 class="section-title">网站链接</h2>
         <div class="link-content">
-            <a href="https://github.com/[你的GitHub用户名]/zty-homepage" target="_blank" class="link-btn">GitHub仓库</a>
-            <a href="https://[你的GitHub用户名].github.io/zty-homepage/" target="_blank" class="link-btn">GitHub Pages网站</a>
+            <a href="https://github.com/[你的GitHub用户名]/zty-homepage" target="_blank" class="link-btn">
+                <i class="fa-brands fa-github" style="margin-right: 5px;"></i>GitHub仓库
+            </a>
+            <a href="https://[你的GitHub用户名].github.io/zty-homepage/" target="_blank" class="link-btn">
+                <i class="fa-solid fa-globe" style="margin-right: 5px;"></i>GitHub Pages网站
+            </a>
         </div>
     </footer>
 </body>
