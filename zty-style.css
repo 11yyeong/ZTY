@@ -1,9 +1,9 @@
-/* 全局样式重置（适配作业1跨浏览器显示要求） */
+/* 全局样式重置与基础设置 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* 全局应用可爱字体，符合作业1设计要求 */
+    /* 全局使用可爱字体 */
     font-family: "ZCOOLKuaiLe", "Microsoft YaHei", sans-serif;
 }
 
